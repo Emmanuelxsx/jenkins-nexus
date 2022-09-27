@@ -41,7 +41,7 @@ pipeline {
                             nexusUrl: '127.0.0.1:8081',
                             groupId: 'pom.com.mycompany.app',
                             version: 'pom.1.0-SNAPSHOT',
-                            repository: 'maven-central',
+                            repository: 'maven-central-repository',
                             credentialsId: 'NEXUS_CRED',
                             artifacts: [
                                 [artifactId: 'pom.my-app',
