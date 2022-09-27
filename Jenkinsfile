@@ -6,7 +6,7 @@ pipeline {
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "159.223.191.140:8081"
+        NEXUS_URL = "127.0.0.1:8081"
         NEXUS_REPOSITORY = "java-app"
         NEXUS_CREDENTIAL_ID = "NEXUS_CRED"
     }
@@ -38,17 +38,17 @@ pipeline {
                         nexusArtifactUploader(
                             nexusVersion: 'nexus3',
                             protocol: 'http',
-                            nexusUrl: 127.0.0.1:8081,
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
+                            nexusUrl: '127.0.0.1:8081',
+                            groupId: 'pom.com.mycompany.app',
+                            version: 'pom.1.0-SNAPSHOT',
+                            repository: 'maven-central',
+                            credentialsId: 'NEXUS_CRED',
                             artifacts: [
-                                [artifactId: pom.artifactId,
+                                [artifactId: 'pom.my-app',
                                 classifier: '',
                                 file: artifactPath,
                                 type: pom.packaging],
-                                [artifactId: pom.artifactId,
+                                [artifactId: 'pom.my-app',
                                 classifier: '',
                                 file: "pom.xml",
                                 type: "pom"]
